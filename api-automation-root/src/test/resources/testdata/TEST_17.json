@@ -1,0 +1,64 @@
+{
+  "TC-LOGIN-001": {},
+  "TC-LOGIN-002": {
+    "overrides": {
+      "email": "mfa_enabled_user@example.com",
+      "password": "Secure@Pass1"
+    }
+  },
+  "TC-LOGIN-003": {
+    "overrides": {
+      "password": "IncorrectPassword"
+    }
+  },
+  "TC-LOGIN-004": {
+    "overrides": {
+      "email": "nonexistent.user@example.com",
+      "password": "anypassword"
+    }
+  },
+  "TC-LOGIN-005": {
+    "remove": [
+      "password"
+    ]
+  },
+  "TC-LOGIN-006": {
+    "remove": [
+      "email"
+    ]
+  },
+  "TC-LOGIN-007": {
+    "overrides": {
+      "email": "invalid-email-format",
+      "password": "anypassword"
+    }
+  },
+  "TC-LOGIN-008": {
+    "overrides": {
+      "email": "",
+      "password": "anypassword"
+    }
+  },
+  "TC-LOGIN-009": {
+    "overrides": {
+      "email": "{{auth.username}}",
+      "password": ""
+    }
+  },
+  "TC-LOGIN-010": {
+    "request_body": {
+      "type": "MALFORMED_JSON",
+      "value": "{\"email\": \"test@example.com\", \"password\": \"password123\""
+    }
+  },
+  "TC-LOGIN-011": {
+    "request_body": {
+      "type": "NULL"
+    }
+  },
+  "TC-LOGIN-012": {
+    "request_body": {
+      "type": "EMPTY_OBJECT"
+    }
+  }
+}
